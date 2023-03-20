@@ -1,7 +1,8 @@
 import {React, useState} from "react";
 import "./App.css";
 import BhagatSingh from "./components/BhagatSingh";
-import { Switch } from "antd";
+import UdhamSingh from "./components/UdhamSingh";
+import { Switch,Divider } from "antd";
 
 
 function App() {
@@ -21,6 +22,8 @@ function App() {
       <div className={color==="white" ? "whitetheme" : "blacktheme"}>
       <Switch onChange={handleclick} />
       <BhagatSingh />
+     <Divider/>
+      <UdhamSingh />
       </div>
     </div>
   );
