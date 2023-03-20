@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import {React, useState} from "react";
+import "./App.css";
+import BhagatSingh from "./components/BhagatSingh";
+import { Switch } from "antd";
+
 
 function App() {
+  const [color, setColor] = useState("white")
+  function handleclick() {
+    if (color === "white") {
+     setColor("black")
+      console.log("Color is " + color)
+    } else {
+      setColor("white")
+      console.log("Color is " + color)
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" >
+      <div className={color==="white" ? "whitetheme" : "blacktheme"}>
+      <Switch onChange={handleclick} />
+      <BhagatSingh />
+      </div>
     </div>
   );
 }
